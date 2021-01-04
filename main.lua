@@ -1,3 +1,5 @@
+--!strict
+
 local Convert = {}
 
 function Convert.UDim2ToVector2(udim2)
@@ -9,7 +11,7 @@ function Convert.Vector2ToUDim2(vector2)
 end
 
 function Convert.StringToBool(str)
-	if str == "true" or str == "false" or str == "nil" then
+	if str == "true" or str == "false" then
 		local boolNew
 		
 		if str == "true" then
@@ -21,12 +23,12 @@ function Convert.StringToBool(str)
 		return boolNew
 	else
 		warn("Parameter must be a string!")
-		return
+		return nil
 	end
 end
 
 function Convert.BoolToString(bool)
-	if bool == true or bool == false or bool == nil then
+	if bool == true or bool == false then
 		local stringNew
 		
 		if bool == true then
@@ -38,7 +40,7 @@ function Convert.BoolToString(bool)
 		return stringNew
 	else
 		warn("Parameter must be a boolean!")
-		return
+		return "nil"
 	end
 end
 
@@ -76,4 +78,5 @@ function Convert.CFrameToVector3(cframe)
 	end
 end
 
+return Convert
 return Convert
